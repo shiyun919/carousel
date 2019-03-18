@@ -47,7 +47,9 @@ h1, h2, h3, h4, h5, h6 {
 .carousel .images {
     transition: all 0.5s;
 }
-
+.carousel .images ul li a {
+    display: block;
+}
 
 .content .buttons {
     margin: 0 auto;
