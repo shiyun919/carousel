@@ -54,10 +54,10 @@ h1, h2, h3, h4, h5, h6 {
 .content .buttons {
     margin: 0 auto;
     position: relative;
-    bottom: 28px;
-    left: 636px;
+    bottom: 24px;
     width: 710px;
     font-size: 10px;
+    text-align: right;
 }
 .buttons span {
     display: inline-block;
