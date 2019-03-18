@@ -1,0 +1,50 @@
+/*通用样式*/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #efefef;
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+ul, li {
+    list-style-type: none;
+}
+h1, h2, h3, h4, h5, h6 {
+
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+
+/*正文样式*/
+
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+.content .carousel {
+    width: 710px;
+    overflow: hidden;
+}
+.carousel .images {
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.5s;
+}
+.carousel .images .
