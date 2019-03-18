@@ -38,6 +38,22 @@
             <span class="btn-on" id="btn3">3</span>
         </div>
     </div>
-    
+    <script>
+        $(btn1).on('click', function(x){
+            $(images).css({
+                transform:'translateX(0)'
+            })
+        })
+        $(btn2).on('click', function(xx){
+            $(images).css({
+                transform:'translateX(-300px)'
+            })
+        })
+        $(btn3).on('click',function(xxx){
+            $(images).css({
+                transform:'translateX(-600px)'
+            })
+        })
+    </script>
 </body>
 </html>
