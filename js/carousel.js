@@ -5,11 +5,11 @@ $(btn1).on('click', function(){
 })
 $(btn2).on('click', function(){
     $(images).css({
-        transform:'translateX(-300px)'
+        transform:'translateX(-710px)'
     })
 })
 $(btn3).on('click',function(){
     $(images).css({
-        transform:'translateX(-600px)'
+        transform:'translateX(-1420px)'
     })
 })

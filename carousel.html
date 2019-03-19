@@ -6,30 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>简单的轮播</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/carousel.js"></script>
 </head>
 <body>
     <div class="content">
         <div class="carousel">
-            <div class="images">
-                <ul class="clearfix"> 
-                    <li class="left">
-                        <a href="#">
-                            <img src="image/pictur-1.jpg" alt="" style="width:710px; height:300px">
-                        </a>
-                    </li>
-                    <li class="left">
-                        <a href="#">
-                            <img src="image/pictur-2.jpg" alt="" style="width:710px; height:300px">
-                        </a>
-                    </li>
-                    <li class="left">
-                        <a href="#">
-                            <img src="image/pictur-3.jpg" alt="" style="width:710px; height:300px">
-                        </a>
-                    </li>
-                </ul>
+            <div class="images" id="images">
+                <a href="#">
+                    <img src="image/pictur-1.jpg" alt="" style="width:710px; height:300px">
+                </a>
+                <a href="#">
+                    <img src="image/picture-2.jpg" alt="" style="width:710px; height:300px">
+                </a>
+                <a href="#">
+                    <img src="image/picture-3.jpg" alt="" style="width:710px; height:300px">
+                </a>
             </div>
         </div>
         <div class="buttons">
@@ -38,22 +30,22 @@
             <span class="btn-on" id="btn3">3</span>
         </div>
     </div>
-    <script>
-        $(btn1).on('click', function(x){
-            $(images).css({
-                transform:'translateX(0)'
-            })
-        })
-        $(btn2).on('click', function(xx){
-            $(images).css({
-                transform:'translateX(-300px)'
-            })
-        })
-        $(btn3).on('click',function(xxx){
-            $(images).css({
-                transform:'translateX(-600px)'
-            })
-        })
+    <script type="text/javascript">
+    	$(btn1).on('click', function(){
+		    $(images).css({
+		        transform:'translateX(0)'
+		    })
+		})
+		$(btn2).on('click', function(){
+		    $(images).css({
+		        transform:'translateX(-710px)'
+		    })
+		})
+		$(btn3).on('click',function(){
+		    $(images).css({
+		        transform:'translateX(-1420px)'
+		    })
+		})
     </script>
 </body>
 </html>
