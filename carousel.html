@@ -66,8 +66,9 @@
 
         var timeId = setTime()
 
-        function playSlide(index){
-        allButtons.eq(index).trigger('click')
+        function playSlide(number){
+        allButtons.eq(number).trigger('click')
+        activeButton(allButtons.eq(number))
         }
 
         function activeButton($button){
