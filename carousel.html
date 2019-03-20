@@ -37,10 +37,7 @@
 
         for(let i=0; i<allButtons.length; i++){
         $(allButtons[i]).on('click', function(x){
-            //console.log('hi')
-            //x.currentTarget 获取到当前点击的按钮
             var index = $(x.currentTarget).index() //用jQuery方法获取到当前点击的按钮在所有按钮中排行第几
-            //console.log(index)
             $('#images').css({
             transform:'translateX('+ index * -710 +'px)'
             })
