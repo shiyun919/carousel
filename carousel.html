@@ -6,48 +6,90 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>简单的轮播</title>
     <link rel="stylesheet" href="css/style.css">
-    
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/carousel.js"></script>
 </head>
 <body>
     <div class="content">
-        <div class="carousel">
+        <div class="window">
             <div class="images" id="images">
                 <a href="#">
-                    <img src="image/pictur-1.jpg" alt="" style="width:710px; height:300px">
+                    <img src="https://i.loli.net/2019/03/19/5c9062ae2ca54.jpg" alt="" style="width:710px; height:300px">
                 </a>
                 <a href="#">
-                    <img src="image/picture-2.jpg" alt="" style="width:710px; height:300px">
+                    <img src="https://i.loli.net/2019/03/19/5c9062b11e9b1.jpg" alt="" style="width:710px; height:300px">
                 </a>
                 <a href="#">
-                    <img src="image/picture-3.jpg" alt="" style="width:710px; height:300px">
+                    <img src="https://i.loli.net/2019/03/19/5c9062b2eb024.jpg" alt="" style="width:710px; height:300px">
                 </a>
             </div>
         </div>
-        <div class="buttons">
-            <span class="btn-on" id="btn1">1</span>
-            <span class="btn-on" id="btn2">2</span>
-            <span class="btn-on" id="btn3">3</span>
+        <div id="buttons">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
         </div>
     </div>
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    
     <script>
+        //点击无限张图片进行轮播
 
-        $(btn1).on('click', function(){
-            $(images).css({
-                transform:'translateX(0)'
+        var allButtons = $('#buttons > span')
+
+        for(let i=0; i<allButtons.length; i++){
+        $(allButtons[i]).on('click', function(x){
+            //console.log('hi')
+            //x.currentTarget 获取到当前点击的按钮
+            var index = $(x.currentTarget).index() //用jQuery方法获取到当前点击的按钮在所有按钮中排行第几
+            //console.log(index)
+            $('#images').css({
+            transform:'translateX('+ index * -710 +'px)'
             })
+            n = index
+            activeButton(allButtons.eq(n))
         })
-        $(btn2).on('click', function(){
-            $(images).css({
-                transform:'translateX(-710px)'
-            })
+        }
+
+
+
+        //自动播放轮播
+        var n = 0;
+        var size = allButtons.length
+        //allButtons.eq(n%size) 获取到第0,1,2按钮，用余数获取
+        playSlide(n%size)
+        
+        function setTime(){
+            setInterval(()=>{
+            n += 1 
+            playSlide(n%size)
+        },2000)   //延时2s播放下一个按钮的轮播
+        }
+
+        var timeId = setTime()
+
+        function playSlide(index){
+        allButtons.eq(index).trigger('click')
+        activeButton(allButtons.eq(index))
+        }
+
+        function activeButton($button){
+        $button
+            .addClass('btn-on')
+            .siblings('.btn-on')
+            .removeClass('btn-on')
+        }
+
+
+        //鼠标移入轮播窗口图片悬停(就是清除间隔播放效果)
+        $('.window').on('mouseenter', function() {
+        window.clearInterval(timeId)
         })
-        $(btn3).on('click',function(){
-            $(images).css({
-                transform:'translateX(-1420px)'
-            })
+
+        $('.window').on('mouseleave', function() {
+            timeId = setTime()
         })
+
+
     </script>
+    
 </body>
 </html>

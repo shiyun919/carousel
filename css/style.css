@@ -37,21 +37,20 @@ h1, h2, h3, h4, h5, h6 {
 .content {
     width: 100%;
     margin: 40px 0;
-    background: #fff;
 }
-.content .carousel {
+.content .window {
     width: 710px;
     overflow: hidden;
     margin: 0 auto;
 }
-.carousel .images {
+.window .images {
     display: flex;
   	align-items: flex-start;
   	transition: all 0.5s;
 }
 
 
-.content .buttons {
+.content #buttons {
     margin: 0 auto;
     position: relative;
     bottom: 24px;
@@ -59,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 10px;
     text-align: right;
 }
-.buttons span {
+#buttons span {
     display: inline-block;
     margin: 0px 2px;
     font-size: 12px;
@@ -68,3 +67,26 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 18px;
     background: #fff;
 }
+#buttons span.btn-on {
+  background:#ff6633;
+  color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
