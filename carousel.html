@@ -53,6 +53,8 @@
         var size = allButtons.length
         playSlide(n%size)
         
+        var timeId = setTime()
+
         function setTime(){
             setInterval(()=>{
             n += 1 
@@ -60,7 +62,6 @@
         },2000)   //延时2s播放下一个按钮的轮播
         }
 
-        var timeId = setTime()
 
         function playSlide(number){
         allButtons.eq(number).trigger('click')
