@@ -16,6 +16,8 @@ $(allButtons[i]).on('click', function(x){
 })
 }
 
+
+
 //自动播放轮播
 var n = 0;
 var size = allButtons.length
@@ -34,8 +36,8 @@ function setTime(){
 
 
 function playSlide(number){
-allButtons.eq(number).trigger('click')
-activeButton(allButtons.eq(number))
+    allButtons.eq(number).trigger('click')
+    activeButton(allButtons.eq(number))
 }
 
 function activeButton($button){
@@ -48,7 +50,7 @@ $button
 
 //鼠标移入轮播窗口图片悬停(就是清除间隔播放效果)
 $('.window').on('mouseenter', function() {
-window.clearInterval(timeId)
+    window.clearInterval(timeId)
 })
 
 $('.window').on('mouseleave', function() {
