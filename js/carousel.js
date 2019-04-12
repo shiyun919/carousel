@@ -30,7 +30,7 @@ function setTime(){
     return setInterval(()=>{
     n += 1 
     playSlide(n%size)
-},2000)   //延时2s播放下一个按钮的轮播
+},3000)   //延时2s播放下一个按钮的轮播
 }
 
 
